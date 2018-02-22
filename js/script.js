@@ -14,11 +14,18 @@ $(document).ready(function(){
   function giphyURLWithSearchTerm(searchTerm) {
       // write a function that will return a url for the giphy API with
       // the searchTerm provided in the parameters
-  }
+    var firstPart="https://api.giphy.com/v1/stickers/search?q"+ searchTerm;
+      var secondPart="&api_key=dc6zaTOxFJmzC";
+      var newURL= firstPart+secondPart;
+      console.log(newURL);
+      return newURL;
+}
 
   function appendImageToGallery(srcURL) {
       // write a function that will append an <img> to the div with class="gallery"
       // using the URL provided in the parameters
+       var image='<img src="' + srcURL + '"></img>';
+       $("body").append(image);
   }
 
   function callGiphyAPIWithSearchTerm(searchTerm) {
